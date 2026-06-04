@@ -9,8 +9,7 @@ const Footer = () => {
 
         <div>
             <img className="mb-5 w-40" src={assets.logo} alt="" />
-            <p className="w-full md:w-2/3 text-gray-600 leading-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, ea nulla suscipit deleniti atque fugit adipisci deserunt corrupti mollitia voluptates? Sit ullam culpa nam minus consectetur eius fuga fugit possimus?
-
+            <p className="w-full md:w-2/3 text-gray-600 leading-6">Find the right specialist, check real‑time availability, and book secure appointments from the comfort of your home. Our platform helps you connect with trusted doctors for safe, timely, and convenient care, but it does not replace medical emergencies or your personal physician’s advice.
             </p>
         </div>
 
@@ -28,7 +27,7 @@ const Footer = () => {
         <div>
                 <p className='text-xl font-medium mb-5' >GET IN TOUCH </p>
                 <ul>
-                  <li>+1-212-456-790</li>
+                  <li>8279895022</li>
                   <li>aky9842@gmail.com</li>
                 </ul>
         </div>
@@ -37,7 +36,7 @@ const Footer = () => {
       {/* ----- CopyRight text ------ */}
       <div>
         <hr />
-        <p className="py-5 text-sm text-center ">Copyright 2025@ Prescripto . All rights reserved</p>
+        <p className="py-5 text-sm text-center ">Copyright 2026@ Prescripto . All rights reserved</p>
       </div>
     </div>
   );

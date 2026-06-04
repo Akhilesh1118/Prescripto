@@ -1,0 +1,87 @@
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+*.local
+
+# Dependencies
+node_modules/
+bower_components/
+jspm_packages/
+.pnp/
+.pnp.js
+
+# Build and output folders
+dist/
+dist-ssr/
+build/
+.next/
+out/
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Caches and temporary files
+.cache/
+.parcel-cache/
+.turbo/
+.vite/
+.eslintcache
+.stylelintcache
+tmp/
+temp/
+*.tmp
+*.temp
+
+# IDE and editor files
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Runtime uploads and local storage
+uploads/
+public/uploads/
+storage/
+
+# Databases and private credential files
+*.db
+*.sqlite
+*.sqlite3
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+*.kdbx
+credentials.json
+service-account*.json
+firebase-service-account*.json
+*-service-account.json
+secrets.json
+secret*.json
+
+# Test artifacts
+junit.xml
+test-results/
+playwright-report/
