@@ -1,3 +1,12 @@
-.env
-backend/.env
+# Dependencies
 node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Keep example environment files commit-safe
+!.env.example
+!**/.env.example
