@@ -1,5 +1,5 @@
 import validator from "validator";
-import bycrypt from "bcrypt";
+import bycrypt from "bcryptjs";
 import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import {v2 as cloudinary } from "cloudinary";
@@ -232,16 +232,21 @@ const cancelAppointment = async(req, res)=>{
     }
 }
    
-    const razorpayInstance = new razorpay({
-        key_id: process.env.RAZORPAY_KEY_ID,
-        key_secret: process.env.RAZORPAY_KEY_SECRET
-    })
+    const razorpayInstance = (process.env.RAZORPAY_KEY_ID && process.env.RAZORPAY_KEY_SECRET)
+        ? new razorpay({
+            key_id: process.env.RAZORPAY_KEY_ID,
+            key_secret: process.env.RAZORPAY_KEY_SECRET
+        })
+        : null;
 
     // API to make payment of appointment using razorpay 
 
     const paymentRazorpay = async (req, res) => {
 
           try {
+            if (!razorpayInstance) {
+                return res.json({success:false, message:"Razorpay is not configured"})
+            }
             const {appointmentId} = req.body 
             const appointmentData = await appointmentModel.findById(appointmentId)
     
@@ -273,6 +278,9 @@ const cancelAppointment = async(req, res)=>{
     const verfiyRazorpay = async (req, res) => {
 
         try {  
+            if (!razorpayInstance) {
+                return res.json({success:false, message:"Razorpay is not configured"})
+            }
             const{razorpay_order_id} = req.body 
             const orderInfo = await razorpayInstance.orders.fetch(razorpay_order_id)
            

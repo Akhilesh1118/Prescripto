@@ -1,0 +1,18 @@
+{
+  "name": "prescripto",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "backend",
+    "frontend",
+    "admin"
+  ],
+  "scripts": {
+    "build:frontend": "npm run build --workspace=frontend",
+    "build:admin": "npm run build --workspace=admin",
+    "build": "npm run build:frontend && npm run build:admin",
+    "dev": "npm run build && node backend/server.js",
+    "start": "node backend/server.js"
+  }
+}

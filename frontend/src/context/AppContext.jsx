@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { doctors as fallbackDoctors } from "../assets/assets";
 
 export const AppContext = createContext()
 
@@ -9,7 +10,7 @@ const AppContextProvider = (props) => {
     // const currencySymbol = '$'
      const currencySymbol = '₹ '
 
-    const backendUrl = import.meta.env.VITE_BACKEND_URL
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || ''
     const [doctors, setDoctors] = useState([])
     const [token , setToken] = useState(localStorage.getItem('token')?localStorage.getItem('token'):false)
     const[userData, setUserData] = useState(false)
@@ -18,15 +19,15 @@ const AppContextProvider = (props) => {
     const getDoctorsData = async () => {
         try {
             const {data} = await axios.get(backendUrl + '/api/doctor/list')
-            if (data.success) {
+            if (data.success && Array.isArray(data.doctors) && data.doctors.length > 0) {
                 setDoctors(data.doctors)
-            }else {
-                toast.error(data.message)
+            } else {
+                setDoctors(fallbackDoctors.map(doc => ({ available: true, slots_booked: {}, ...doc })))
             }
             
         } catch (error) {
             console.log(error)  
-            toast.error(error.message)
+            setDoctors(fallbackDoctors.map(doc => ({ available: true, slots_booked: {}, ...doc })))
         }
     }
       
