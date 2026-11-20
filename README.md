@@ -547,17 +547,7 @@ Building Prescripto demonstrates practical experience in:
 - Integrating **third-party cloud services** end-to-end: Multer + Cloudinary for media pipelines and Razorpay for server-verified online payments.
 - Managing **shared client state** in React 19 using Context API, React Router v7, and Axios intercept-style header patterns.
 
----
 
-## Author
-
-- **Name:** `[Your Full Name]`
-- **GitHub:** `[https://github.com/your-username]`
-- **LinkedIn:** `[https://linkedin.com/in/your-profile]`
-- **Portfolio:** `[https://your-portfolio-url.com]`
-- **Email:** `[your-email@example.com]`
-
----
 
 ## License
 
